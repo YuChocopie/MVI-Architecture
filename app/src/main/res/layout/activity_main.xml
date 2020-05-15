@@ -17,14 +17,63 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/etText1"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="136dp"
+            android:lines="1"
+            android:text="@={mainVM.searchText1}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/btnMult"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="24dp"
+            android:onClick="@{()->mainVM.setMultiplcation()}"
+            android:src="@drawable/ic_multiplication"
+            app:layout_constraintEnd_toStartOf="@+id/btnDivision"
+            app:layout_constraintStart_toStartOf="@id/etText1"
+            app:layout_constraintTop_toBottomOf="@id/etText1" />
+
+        <ImageView
+            android:id="@+id/btnDivision"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:onClick="@{()->mainVM.setDivision()}"
+            android:src="@drawable/ic_division"
+            app:layout_constraintEnd_toEndOf="@+id/etText1"
+            app:layout_constraintStart_toEndOf="@id/btnMult"
+            app:layout_constraintTop_toTopOf="@id/btnMult" />
+
+        <EditText
+            android:id="@+id/etText2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:lines="1"
+            android:text="@={mainVM.searchText2}"
+            app:layout_constraintEnd_toEndOf="@id/etText1"
+            app:layout_constraintStart_toStartOf="@id/etText1"
+            app:layout_constraintTop_toBottomOf="@id/btnDivision" />
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="36dp"
+            android:background="#ededed"
             android:text="@{mainVM.data.testText}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etText2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
